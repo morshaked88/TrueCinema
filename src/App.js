@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
+import { MovieProvider } from './Store/movieProvider';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Navbar from './components/NavBar/NavBar';
+import Home from './components/Home/Home';
+import WrongPage from './components/404/WrongPage';
+import MyMoviesPage from './components/MyMovies/MyMovies';
+import MovieData from './components/MyMovies/MovieDetails/MovieDetails';
+
+const App = () => (
+  <Router>
+    <AppBox className="App">
+      <MovieProvider>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/My-Movies' component={MyMoviesPage} />
+          <Route path='/movie' component={MovieData} />
+          <Route component={WrongPage} />
+        </Switch>
+      </MovieProvider>
+    </AppBox>
+  </Router>
+)
+
 
 export default App;
+
+const AppBox = styled.div`
+width: 100%;
+height: 100%;
+overflow: hidden;
+`;
