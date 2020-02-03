@@ -6,13 +6,15 @@ import { useData } from '../../Store/movieProvider';
 
 
 const Links = () => {
-
     const { myMovies } = useData();
+
+    const deviceWidth = window.innerWidth;
+
+    const show = deviceWidth < 770 ? null : <List><StyledList to='/'>Home</StyledList></List>;
+
     return (
         <Nav>
-            <List>
-                <StyledList to='/'>Home</StyledList>
-            </List>
+            {show}
             <List>
                 <StyledList to='/My-Movies'>My Movies: {myMovies.length}</StyledList>
             </List>
@@ -35,6 +37,13 @@ text-decoration: none;
 color: #fff;
 font-family: 'Oswald', sans-serif;
 font-size: 22px;
+-webkit-tap-highlight-color: transparent;
+border: 1px  white;
+height: 100%;
+
+@media (max-width: 768px){
+    font-size: 18px;
+}
 
 &:visited{
     text-decoration: none;

@@ -4,25 +4,26 @@ import { useData } from '../../../../Store/movieProvider';
 
 import MovieDesktop from './Desktop';
 import MovieMobile from './Mobile';
+import Empty from '../../Empty/Empty';
 
 
 const Movie = () => {
 
-
-    const { movieQ } = useData();
+    const { movieQ, movieID } = useData();
 
 
     const mobile = <MovieMobile obj={movieQ} />
     const desktop = <MovieDesktop obj={movieQ} />
 
-    const screenWidth = window.innerWidth;
-    const show = screenWidth < 768 ? mobile : desktop;
+    const listFull = (movieID === null)
 
+    const screenWidth = window.innerWidth;
+    const show = screenWidth <= 768 ? mobile : desktop;
 
 
     return (
         <Box>
-            {show}
+            {listFull ? <Empty /> : show}
         </Box>
     );
 

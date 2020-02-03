@@ -37,8 +37,11 @@ const MovieDesktop = ({ obj }) => {
                     </MovieDetails>
                     <DataBox>
                         <DataCont>Rated: {info.Rated}</DataCont>
+                        |
                         <DataCont>Runtime: {info.Runtime}</DataCont>
+                        |
                         <DataCont>Genre: {info.Genre}</DataCont>
+                        |
                         <DataCont>Release Date: {info.Released}</DataCont>
                     </DataBox>
                 </DetailsBox>
@@ -62,17 +65,19 @@ export default MovieDesktop;
 
 
 const Box = styled.div`
-height: 100%;
+height: 100vh;
 width: 100%;
-padding: 30px 15%;
+padding: 30px 20%;
 font-family: 'Oswald', sans-serif;
 overflow: auto;
+background-color: white;
+color: black;
 `;
 
 const Seperator = styled.div`
 width: 100%;
 height: 3px;
-margin: 40px 0;
+margin: 20px 0;
 background-color: rgba(112,112,112,1);
 
 `;
@@ -87,7 +92,7 @@ flex-basis: 100%;
 const RestBox = styled.div`
 display: flex;
 margin: 10px 0;
-flex-basis: 16.666%;
+height: auto;
 align-items: center;
 `;
 
@@ -105,15 +110,18 @@ width: 100%;
 const MainBox = styled.div`
 width:100%;
 display: flex;
-height: 100%;
+height: 40%;
 `;
 
 const ImageBox = styled.div`
 height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 `;
 
 const Poster = styled.img`
-height: 100%
+height:300px;
 `;
 
 const DetailsBox = styled.div`
@@ -135,17 +143,19 @@ align-items: center;
 const DataBox = styled.div`
 display: flex;
 height: 30%;
-flex-direction: column;
+flex-direction: row;
 `;
 
 const DataCont = styled.div`
-
+margin: 0 30px;
+font-size: 15px;
 `;
 
 const TitleBox = styled.div`
 height: 100%;
 display: flex;
 align-items: center;
+justify-content: flex-start;
 `;
 
 const Rating = styled.div`

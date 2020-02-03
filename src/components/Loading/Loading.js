@@ -2,16 +2,16 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components'
 
 const loader = () => (
-    <Box>
-        <SkChase>
-            <SKdot />
-            <SKdot />
-            <SKdot />
-            <SKdot />
-            <SKdot />
-            <SKdot />
-        </SkChase>
-    </Box>
+  <Box>
+    <SkChase>
+      <SKdot />
+      <SKdot />
+      <SKdot />
+      <SKdot />
+      <SKdot />
+      <SKdot />
+    </SkChase>
+  </Box>
 );
 
 export default loader;
@@ -33,7 +33,7 @@ const chaseDotBefore = keyframes`
 `;
 
 const Box = styled.div`
-height: 100%;
+height: 90vh;
 width: 100%;
 display: flex;
 align-items: center;

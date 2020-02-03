@@ -11,10 +11,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 20px;
 }
 
 body, html {
+  margin:0;
+  padding:0;
+  /* max-height:100vh;
+  overflow:hidden; */
   height: 100%;
+  font-family: 'Oswald', sans-serif;
 }
 
 code {
@@ -26,7 +32,8 @@ code {
   height: 100%;
   background-color: black;
 
-
 }
+
+
 
 

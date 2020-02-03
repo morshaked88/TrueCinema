@@ -9,17 +9,27 @@ const MyMoviesPage = () => {
     const { myMovies } = useData();
 
 
+    const removeMovie = (e) => {
+        e.preventDefault();
+        console.log()
+    }
+
+
     return (
         <Box>
-            {myMovies.length === 0 ? <Empty amount={myMovies.length} /> : myMovies.map(item => (
-                <Card key={item.imdbID}
-                    name={item.Title}
-                    year={item.Year}
-                    poster={item.Poster}
-                    item={item.imdbID}
-                />
+            {myMovies.length === 0 ? <Empty amount={myMovies.length} /> : myMovies.map(item => {
 
-            ))}
+                return (
+                    <Card key={item.imdbID}
+                        name={item.Title}
+                        year={item.Year}
+                        poster={item.Poster}
+                        item={item.imdbID}
+                        clicked={(e) => removeMovie(e)}
+                        id={item.imdbID}
+                    />
+                )
+            })}
         </Box>
     )
 };

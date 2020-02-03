@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styled from 'styled-components'
 import { useData } from '../../Store/movieProvider';
 
@@ -11,17 +11,21 @@ const Home = () => {
 
 
     const nextMovie = () => {
-        if (counter >= 9) {
+        if (movies.length === 1) {
+            return
+        } else if (counter >= movies.length - 1) {
             setCounter(0)
             setCurrent(movies[counter])
-        } else if (counter < 10) {
+        } else if (counter < movies.length) {
             setCurrent(movies[counter])
             setCounter(counter + 1)
         }
     }
 
     const previousMovie = () => {
-        if (counter === 0) {
+        if (movies.length === 1) {
+            return
+        } else if (counter === 0) {
             setCounter(9);
             setCurrent(movies[counter])
         } else {
@@ -30,20 +34,20 @@ const Home = () => {
         }
     }
 
-
     return (
         < Box >
             {fetching ? <Loader /> : <Slider title={currentMovie.Title}
                 year={currentMovie.Year}
                 poster={currentMovie.Poster}
                 moveF={nextMovie}
-                moveB={previousMovie} />
+                moveB={previousMovie}
+                list={movies.length} />
             }
         </Box >
     )
 };
 
-export default Home;
+export default memo(Home);
 
 const Box = styled.div`
 height: 100%;

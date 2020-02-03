@@ -6,16 +6,16 @@ import Movie from './Movie/Movie';
 
 const MovieDetails = () => {
 
-    let { movieID, movieQ, setMovieQ, error, setError } = useData();
+    let { movieID, movieQ, setMovieQ, setError } = useData();
 
     useEffect(() => {
         fetchMovie(movieID);
-        console.log(movieQ)
+
     }, [movieID])
 
     const fetchMovie = async (query) => {
         try {
-            const result = await fetch(`http://www.omdbapi.com/?apikey=db4253d6&i=${query}`)
+            const result = await fetch(`https://www.omdbapi.com/?apikey=db4253d6&i=${query}`)
             const data = await result.json();
             setMovieQ(data)
         } catch (error) {

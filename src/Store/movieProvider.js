@@ -24,23 +24,39 @@ const MovieProvider = ({ children }) => {
     const [myMovies, setMyMovies] = useState([]);
     const [movieID, setMovieID] = useState(null);
     const [movieQ, setMovieQ] = useState(null);
+    const [isOpen, setOpen] = useState(false);
+    const [userInput, setInput] = useState('');
 
     useEffect(() => {
         //making the API request
         const getRemoteData = async () => {
             try {
-                const remoteData = await getMovies.getMovies();
+                if (userInput.length === 0) {
+                    const remoteData = await getMovies.getMovies('batman');
+                    setMovies(remoteData.Search);
+                    setCurrent(remoteData.Search[0])
+                    setFetching(false);
+                } else {
+                    const remoteData = await getMovies.getMovies(userInput);
+                    if (remoteData.Response === 'False') {
+                        setError(remoteData.Error)
+                    } else {
+                        setMovies(remoteData.Search);
+                        setCurrent(remoteData.Search[0])
+                        setFetching(false);
+                    }
+                }
                 //pushing data to state and update the fetching
-                setMovies(remoteData.Search);
-                setCurrent(remoteData.Search[0])
-                setFetching(false);
+                // setMovies(remoteData.Search);
+                // setCurrent(remoteData.Search[0])
+                // setFetching(false);
             } catch (err) {
                 setError(err.message)
             }
         }
         getRemoteData();
 
-    }, []);
+    }, [userInput]);
 
     const state = {
         movies,
@@ -50,7 +66,9 @@ const MovieProvider = ({ children }) => {
         counter,
         myMovies,
         movieID,
-        movieQ
+        movieQ,
+        isOpen,
+        userInput
     }
 
     const cb = {
@@ -58,7 +76,10 @@ const MovieProvider = ({ children }) => {
         setCounter,
         setMyMovies,
         setMovieID,
-        setMovieQ
+        setMovieQ,
+        setOpen,
+        setInput,
+        setError
     }
 
     return (

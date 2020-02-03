@@ -92,7 +92,7 @@ export default MovieMobile;
 
 const Box = styled.div`
 width: 100%;
-height: 100vh;
+height: 90vh;
 overflow: auto;
 font-family: 'Oswald', sans-serif;
 background-color: white;
@@ -113,8 +113,9 @@ margin-left: 10px;
 const MovieBox = styled.div`
 width: 100%;
 display: flex;
-height: 42vh;
-flex-direction: column;
+height: 100%;
+flex-direction:column;
+overflow: auto;
 `;
 
 const DataBox = styled.div`
@@ -122,7 +123,7 @@ width: 100%;
 display: flex;
 align-items: center;
 border-bottom: 0.3px solid #dbdbdb;
-height: 20%;
+flex-grow: 1;
 `;
 
 const DataTitle = styled.div`
@@ -154,7 +155,7 @@ padding: 0 10%;
 const InfoBox = styled.div`
 background-color: #eaeaea;
 border-bottom: 0.3px solid #dbdbdb;
-height: 20vh;
+height: auto;
 `;
 
 const InfoBox2 = styled.div`
@@ -162,13 +163,13 @@ display: flex;
 height: 20%;
 padding: 10px;
 border-bottom: 0.3px solid #dbdbdb;
-height: 20vh;
+height: auto;
 `;
 
 const TitleBox = styled.div`
 display: flex;
 width: 100%;
-padding: 5%;
+padding: 5px;
 text-align: left;
 `;
 
@@ -179,11 +180,15 @@ font-size: 40px;
 const Info = styled.div`
 display: flex;
 width: 100%;
-padding: 0 5% 1% 5%;
+padding: 0 5px 1px 5px;
+height: auto;
+text-align: left;
+align-items: center;
 `;
 
 const InfoTxt = styled.p`
 margin: 0 5px;
+font-size: 10px;
 `;
 
 const Year = styled.h6`
@@ -196,7 +201,7 @@ font-size: 15px;
 
 
 const Poster = styled.img`
-height: 100%;
+height: 150px;
 `;
 
 const PlotBox = styled.div`
