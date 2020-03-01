@@ -35,4 +35,5 @@ export default MovieDetails;
 
 const Box = styled.div`
 color: white;
+height: 100%;
 `;

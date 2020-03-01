@@ -34,7 +34,7 @@ const Navbar = () => {
     }
 
 
-    const menu = deviceWidth < 770 ? <SlideMenu /> : <Logo />
+    const menu = deviceWidth < 900 ? <SlideMenu /> : <Logo />
     const searchInput = <Box2>
         <Input type='text' placeholder='Search Movie Title...' onKeyPress={(e) => getValue(e)}></Input>
         <FontA onClick={() => setOpen(!isOpen)}>
@@ -81,6 +81,10 @@ background-color: #1e272e;
 height: 60px;
 display: flex;
 justify-content: center;
+
+@media (max-width: 900px) and (max-height: 450px) {
+    height: 15%;
+}
 `;
 
 const Input = styled.input`
@@ -121,12 +125,17 @@ width: auto;
 `;
 
 const Nav = styled.div`
+position: fixed;
 width: 100%;
 background-color: #1e272e;
 height: 60px;
 display: flex;
 justify-content: space-between;
 padding: 0 auto;
+
+@media (max-width: 900px) and (max-height: 450px) {
+    height: 15%;
+}
 
 
 @media (min-width: 1000px) and (min-height: 700px){

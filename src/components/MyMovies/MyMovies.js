@@ -41,4 +41,5 @@ height: 100%;
 width: 100%;
 color: white;
 overflow: scroll;
+margin-top: 70px;
 `;

@@ -18,7 +18,7 @@ const Movie = () => {
     const listFull = (movieID === null)
 
     const screenWidth = window.innerWidth;
-    const show = screenWidth <= 768 ? mobile : desktop;
+    const show = screenWidth <= 900 ? mobile : desktop;
 
 
     return (
@@ -35,5 +35,5 @@ export default Movie;
 const Box = styled.div`
 height:100%;
 width: 100%;
-overflow: auto;
+margin: 60px auto 0;
 `;

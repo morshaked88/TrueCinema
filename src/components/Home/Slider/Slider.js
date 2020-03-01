@@ -92,6 +92,13 @@ flex-direction: column;
 overflow: auto;
 padding: 0 20%;
 
+@media (max-width: 900px) and (max-height: 450px) {
+    flex-direction: row;
+    padding: 0;
+    align-items:center;
+    justify-content: center;
+}
+
 @media (min-width: 1000px) and (min-height: 700px){
     flex-direction: row;
 }
@@ -101,6 +108,11 @@ const StyledLink = styled(Link)`
 height: 70%;
 cursor: pointer;
 
+@media (max-width: 900px) and (max-height: 450px) {
+height:50%;
+width: 70%;
+}
+
 @media (min-width: 1000px) and (min-height: 700px){
     height: 60%;
     }
@@ -108,7 +120,12 @@ cursor: pointer;
 
 
 const Poster = styled.img`
-height: 100%
+height: 100%;
+
+@media (max-width: 900px) and (max-height: 450px) {
+height: 100%;
+width:100%;
+}
 `;
 
 const MobileArrows = styled.div`
@@ -118,6 +135,9 @@ height: 20%;
 box-sizing: border-box;
 padding-bottom: 10%;
 
+@media (max-width: 900px) and (max-height: 450px) {
+    display: none;
+}
 
 @media (min-width: 1000px) and (min-height: 700px){
     display: none;
@@ -186,6 +206,17 @@ const ButtonArrow = styled.div`
 
 display: none;
 
+@media (max-width: 900px) and (max-height: 450px) {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-basis: 20%;
+    cursor: pointer;
+    height: 100%;
+    flex-direction: column;
+    -webkit-tap-highlight-color: transparent;
+}
+
     @media (min-width: 1000px) and (min-height: 700px){
     margin-top: 80px;
     justify-content: center;
@@ -207,6 +238,11 @@ justify-content: flex-start;
 margin-top: 20px;
 height: 70%;
 
+@media (max-width: 900px) and (max-height: 450px) {
+margin-top: 5px;
+height:100%;
+}
+
 @media (min-width: 1000px) and (min-height: 700px){
     margin-top: 80px;
     flex-basis: 60%;
@@ -220,12 +256,20 @@ height: 70%;
 
 const DetailsBox = styled.div`
 text-align: center;
+
+@media (max-width: 900px) and (max-height: 450px) {
+margin-top: 0;
+}
 `;
 
 
 const Title = styled.h1`
 color: white;
 font-size: 20px;
+
+@media (max-width: 900px) and (max-height: 450px) {
+    font-size: 25px;
+}
 
 @media (min-width: 1000px) and (min-height: 700px){
     font-size: 40px;
@@ -235,4 +279,8 @@ font-size: 20px;
 const Year = styled.h3`
 color: white;
 font-size: 35px;
+
+@media (max-width: 900px) and (max-height: 450px) {
+    font-size: 20px;
+}
 `;

@@ -92,7 +92,7 @@ export default MovieMobile;
 
 const Box = styled.div`
 width: 100%;
-height: 90vh;
+height: 100%;
 overflow: auto;
 font-family: 'Oswald', sans-serif;
 background-color: white;
@@ -115,7 +115,6 @@ width: 100%;
 display: flex;
 height: 100%;
 flex-direction:column;
-overflow: auto;
 `;
 
 const DataBox = styled.div`
@@ -123,7 +122,7 @@ width: 100%;
 display: flex;
 align-items: center;
 border-bottom: 0.3px solid #dbdbdb;
-flex-grow: 1;
+flex: 1;
 `;
 
 const DataTitle = styled.div`

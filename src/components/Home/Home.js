@@ -50,6 +50,12 @@ const Home = () => {
 export default memo(Home);
 
 const Box = styled.div`
-height: 100%;
+height:90%;
 width: 100%;
+margin: 60px auto 0;
+
+@media (max-width: 900px) and (max-height: 450px) {
+    height: 85%;
+    padding-top: 20px;
+}
 `;
